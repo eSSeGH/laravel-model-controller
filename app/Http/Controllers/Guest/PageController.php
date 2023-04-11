@@ -11,7 +11,11 @@ class PageController extends Controller
     public function index() {
         $movies = Movie::all();
 
-        return view('Welcome');
+        $data = [
+            'movies' => $movies
+        ];
+
+        return view('Welcome', $data);
     }
 
     public function contacts() {
